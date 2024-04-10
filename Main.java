@@ -39,7 +39,7 @@ final class Main {
         final int oneHundredConst = 100;
         final int fortyFiveConst = 45;
         final int fiveConst = 5;
-        
+
         System.out.println("Created Ford focus");
         final Vehicle fordFocus = new Vehicle("white", "B40-C4RR0",
             fourConst, twoHundredEightyFourConst);
@@ -59,7 +59,8 @@ final class Main {
 
         // New Ferrari
         System.out.println("Created a Ferrari");
-        final Vehicle ferrari = new Vehicle("red", "VHD-35HU", 2, threeHundredTwentyConst);
+        final Vehicle ferrari = new Vehicle("red", "VHD-35HU", 2,
+            threeHundredTwentyConst);
 
         System.out.println(statusString);
         ferrari.status();
@@ -80,7 +81,8 @@ final class Main {
 
         // New Citroen Ami
         System.out.println("Created a Citroen Ami");
-        final Vehicle citroenAmi = new Vehicle("blue", "FS-695-DQ", fiveConst, fortyFiveConst);
+        final Vehicle citroenAmi = new Vehicle("blue", "FS-695-DQ",
+            fiveConst, fortyFiveConst);
 
         System.out.println(statusString);
         citroenAmi.status();
