@@ -92,7 +92,7 @@ final class Main {
         System.out.println(newSpeedString + citroenAmi.getSpeed());
 
         System.out.println("Breaking, 2 of power for 10 sec.");
-        citroenAmi.brake(fiveConst, tenConst);
+        citroenAmi.brake(2, tenConst);
         System.out.println(newSpeedString + citroenAmi.getSpeed());
 
         System.out.println(changingColorString);
