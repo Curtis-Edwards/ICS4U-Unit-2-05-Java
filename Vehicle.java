@@ -18,8 +18,8 @@ public class Vehicle {
     private int speed;
 
     /**
-     * Constructor
-     * 
+     * Constructor.
+     *
      * @param color         The color of the vehicle.
      * @param licencePlate  The license plate of the vehicle.
      * @param numberOfDoors The number of doors of the vehicle.
@@ -35,7 +35,7 @@ public class Vehicle {
 
     /**
      * Getter for color.
-     * 
+     *
      * @return The color of the vehicle.
      */
     public String getColor() {
@@ -44,7 +44,7 @@ public class Vehicle {
 
     /**
      * Getter for license plate.
-     * 
+     *
      * @return The license plate of the vehicle.
      */
     public String getLicencePlate() {
@@ -53,7 +53,7 @@ public class Vehicle {
 
     /**
      * Getter for speed.
-     * 
+     *
      * @return The speed of the vehicle.
      */
     public int getSpeed() {
@@ -62,7 +62,7 @@ public class Vehicle {
 
     /**
      * Setter for color.
-     * 
+     *
      * @param color The color to set for the vehicle.
      */
     public void setColor(String color) {
@@ -71,7 +71,7 @@ public class Vehicle {
 
     /**
      * Setter for license plate.
-     * 
+     *
      * @param licencePlate The license plate to set for the vehicle.
      */
     public void setLicencePlate(String licencePlate) {
@@ -91,7 +91,7 @@ public class Vehicle {
 
     /**
      * Method to accelerate the vehicle.
-     * 
+     *
      * @param accelerationPower The power of acceleration.
      * @param accelerationTime  The time duration for acceleration.
      */
@@ -105,7 +105,7 @@ public class Vehicle {
 
     /**
      * Method to apply brakes to the vehicle.
-     * 
+     *
      * @param breakPower The power of the brake.
      * @param breakTime  The time duration for braking.
      */
