@@ -1,5 +1,5 @@
 /*
-* This is the standard Main.java starting point.
+* This is the main code that runs with the Vehicle Class.
 *
 * @author  Curtis Edwards
 * @version 1.0
@@ -27,54 +27,61 @@ final class Main {
     * @param args No args will be used
     */
     public static void main(String[] args) {
-        // constants
-        final String fruitsString = "fruits: ";
-        final String poppedString = "popped: ";
-        final String coloursString = "colours: ";
-        final String shapesString = "shapes: ";
-        final String lengthString = "length: ";
-        final String isEmptyString = "is empty: ";
-        final String peakString = "peak: ";
-        final String clearingStackString = "Clearing stack...";
+        System.out.println("Created Ford focus");
+        Vehicle fordFocus = new Vehicle("white", "B40-C4RR0", 4, 284);
 
-        final CurtisStack fruits = new CurtisStack();
-        fruits.push("apple");
-        fruits.push("banana");
-        fruits.push("cherry");
-        System.out.println(fruitsString + fruits.showStack());
-        System.out.println(peakString + fruits.peak());
-        System.out.println(poppedString + fruits.popItem());
-        System.out.println(fruitsString + fruits.showStack());
-        fruits.clear();
-        System.out.println(clearingStackString);
-        System.out.println(fruitsString + fruits.showStack());
+        System.out.println("Status:");
+        fordFocus.status();
+
+        System.out.println("Accelerating, 10 of power for 10 sec.");
+        fordFocus.accelerate(10, 10);
+        System.out.println("New speed: " + fordFocus.getSpeed());
+
+        System.out.println("Changing colour to black:");
+        fordFocus.setColor("black");
+        System.out.println("New color: " + fordFocus.getColor());
+
         System.out.println("");
 
-        final CurtisStack colours = new CurtisStack();
-        colours.push("red");
-        colours.push("green");
-        colours.push("blue");
-        System.out.println(coloursString + colours.showStack());
-        System.out.println(peakString + colours.peak());
-        System.out.println(poppedString + colours.popItem());
-        System.out.println(poppedString + colours.popItem());
-        System.out.println(peakString + colours.peak());
-        System.out.println(coloursString + colours.showStack());
-        colours.clear();
-        System.out.println(clearingStackString);
-        System.out.println(coloursString + colours.showStack());
+        // New Ferrari
+        System.out.println("Created a Ferrari");
+        Vehicle ferrari = new Vehicle("red", "VHD-35HU", 2, 320);
+
+        System.out.println("Status:");
+        ferrari.status();
+
+        System.out.println("Accelerating, 100 of power for 4 sec.");
+        ferrari.accelerate(100, 4);
+        System.out.println("New speed: " + ferrari.getSpeed());
+
+        System.out.println("Breaking, 10 of power for 10 sec.");
+        ferrari.brake(10, 10);
+        System.out.println("New speed: " + ferrari.getSpeed());
+
+        System.out.println("Changing color:");
+        ferrari.setColor("racing red!");
+        System.out.println("New color: " + ferrari.getColor());
+
         System.out.println("");
 
-        final CurtisStack shapes = new CurtisStack();
-        shapes.push("square");
-        shapes.push("triangle");
-        shapes.push("circle");
-        System.out.println(shapesString + shapes.showStack());
-        System.out.println(peakString + shapes.peak());
-        shapes.clear();
-        System.out.println(clearingStackString);
-        System.out.println(peakString + shapes.peak());
-        System.out.println("");
+        // New Citroen Ami
+        System.out.println("Created a Citroen Ami");
+        Vehicle citroenAmi = new Vehicle("blue", "FS-695-DQ", 2, 45);
+
+        System.out.println("Status:");
+        citroenAmi.status();
+
+        System.out.println("Accelerating, 5 of power for 10 sec.");
+        citroenAmi.accelerate(5, 10);
+        System.out.println("New speed: " + citroenAmi.getSpeed());
+
+        System.out.println("Breaking, 2 of power for 10 sec.");
+        citroenAmi.brake(2, 10);
+        System.out.println("New speed: " + citroenAmi.getSpeed());
+
+        System.out.println("Changing color:");
+        citroenAmi.setColor("purple");
+        System.out.println("New color: " + citroenAmi.getColor());
 
         System.out.println("\nDone.");
     }
