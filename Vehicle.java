@@ -1,100 +1,119 @@
 /*
-* The CurtisStack Class.
+* Class that defines a vehicle.
 *
 * @author  Curtis Edwards
 * @version 1.0
-* @since   2024-03-27
+* @since   2024-04-10
 */
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
-* The CurtisStack() class.
+* The Vehicle() class.
 */
-public class CurtisStack {
-    /**
-    * Declares a private instance variable.
-    */
-    private List<String> stackAsList = new ArrayList<>();
+public class Vehicle {
+    // Variables
+    private String color;
+    private String licencePlate;
+    private final int numberOfDoors;
+    private final int maxSpeed;
+    private int speed;
 
     /**
-    * Checks if stack is empty.
-    *
-    * @return true if the stack is empty, false otherwise
-    */
-    public boolean isEmpty() {
-        return stackAsList.isEmpty();
-    }
-
-    /**
-     * Returns top item of stack.
-     *
-     * @return the peaked string
+     * Constructor
+     * 
+     * @param color         The color of the vehicle.
+     * @param licencePlate  The license plate of the vehicle.
+     * @param numberOfDoors The number of doors of the vehicle.
+     * @param maxSpeed      The maximum speed of the vehicle.
      */
-    public String peak() {
-        final String peakedItem;
-        if (!isEmpty()) {
-            peakedItem = stackAsList.get(stackAsList.size() - 1);
-        } else {
-            peakedItem = null;
-        }
-        return peakedItem;
+    public Vehicle(String color, String licencePlate, int numberOfDoors, int maxSpeed) {
+        this.color = color;
+        this.licencePlate = licencePlate;
+        this.numberOfDoors = numberOfDoors;
+        this.maxSpeed = maxSpeed;
+        this.speed = 0;
     }
 
     /**
-    * Returns stack size.
-    *
-    * @return the size of the stack
-    */
-    public int size() {
-        return stackAsList.size();
-    }
-
-    /**
-    * The showStack() method.
-    *
-    * @return the values as a string
-    */
-    public String showStack() {
-        String values = "";
-        for (int counter = 0; counter < stackAsList.size(); counter++) {
-            values += stackAsList.get(counter);
-            if (counter < stackAsList.size() - 1) {
-                values += ", ";
-            }
-        }
-        return values;
-    }
-
-    /**
-     * Clears the entire stack.
+     * Getter for color.
+     * 
+     * @return The color of the vehicle.
      */
-    public void clear() {
-        stackAsList.clear();
+    public String getColor() {
+        return color;
     }
 
     /**
-    * The push() method.
-    *
-    * @param input from Main.java
-    */
-    public void push(String input) {
-        stackAsList.add(input);
+     * Getter for license plate.
+     * 
+     * @return The license plate of the vehicle.
+     */
+    public String getLicencePlate() {
+        return licencePlate;
     }
 
     /**
-    * This method pops a string from the stack.
-    *
-    * @return the popped string
-    */
-    public String popItem() {
-        final String poppedItem;
-        if (!stackAsList.isEmpty()) {
-            poppedItem = stackAsList.remove(stackAsList.size() - 1);
-        } else {
-            poppedItem = null;
+     * Getter for speed.
+     * 
+     * @return The speed of the vehicle.
+     */
+    public int getSpeed() {
+        return speed;
+    }
+
+    /**
+     * Setter for color.
+     * 
+     * @param color The color to set for the vehicle.
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    /**
+     * Setter for license plate.
+     * 
+     * @param licencePlate The license plate to set for the vehicle.
+     */
+    public void setLicencePlate(String licencePlate) {
+        this.licencePlate = licencePlate;
+    }
+
+    /**
+     * Method to display the status of the vehicle.
+     */
+    public void status() {
+        System.out.println(" -> Speed: " + speed);
+        System.out.println(" -> Max Speed: " + maxSpeed);
+        System.out.println(" -> Number Of Doors: " + numberOfDoors);
+        System.out.println(" -> Licence Plate: " + licencePlate);
+        System.out.println(" -> Color: " + color);
+    }
+
+    /**
+     * Method to accelerate the vehicle.
+     * 
+     * @param accelerationPower The power of acceleration.
+     * @param accelerationTime  The time duration for acceleration.
+     */
+    public void accelerate(int accelerationPower, int accelerationTime) {
+        speed = (accelerationPower * accelerationTime) + speed;
+        // Check if speed exceeds max speed
+        if (speed > maxSpeed) {
+            speed = maxSpeed;
         }
-        return poppedItem;
+    }
+
+    /**
+     * Method to apply brakes to the vehicle.
+     * 
+     * @param breakPower The power of the brake.
+     * @param breakTime  The time duration for braking.
+     */
+    public void brake(int breakPower, int breakTime) {
+        speed = speed - (breakPower * breakTime);
+        // Check if speed is less than 0
+        if (speed < 0) {
+            speed = 0;
+        }
     }
 }
