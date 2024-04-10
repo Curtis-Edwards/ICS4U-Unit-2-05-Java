@@ -25,7 +25,8 @@ public class Vehicle {
      * @param numberOfDoors The number of doors of the vehicle.
      * @param maxSpeed      The maximum speed of the vehicle.
      */
-    public Vehicle(String color, String licencePlate, int numberOfDoors, int maxSpeed) {
+    public Vehicle(String color, String licencePlate,
+        int numberOfDoors, int maxSpeed) {
         this.color = color;
         this.licencePlate = licencePlate;
         this.numberOfDoors = numberOfDoors;
