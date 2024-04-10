@@ -10,11 +10,29 @@
 * The Vehicle() class.
 */
 public class Vehicle {
-    // Variables
+    /**
+     * The color of the vehicle.
+     */
     private String color;
+    
+    /**
+     * The license plate of the vehicle.
+     */
     private String licencePlate;
+    
+    /**
+     * The number of doors of the vehicle.
+     */
     private final int numberOfDoors;
+    
+    /**
+     * The maximum speed of the vehicle.
+     */
     private final int maxSpeed;
+    
+    /**
+     * The current speed of the vehicle.
+     */
     private int speed;
 
     /**
